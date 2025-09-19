@@ -67,21 +67,17 @@ public class ListaSimplementeLigada {
         }
         
     }
-    public void BorrarMedio(){
-        int contador = 0;
-        Nodo p = punta;
-        int mitad = 0;
-        while(p!=null ){
-           
-            contador  = contador +1;
-            p = p.getEnlace();     
-            
-        }
+    public void BorrarFinal(){
         
-        int posicion = contador/2;
-        if(posicion == 0){
-            BorrarInicio();
+        
+        
+        
+        
         }
+
+    void Insertarmedioposicion(int dato) {
+        
+    }
         
         
             
@@ -92,6 +88,6 @@ public class ListaSimplementeLigada {
         
         
        
-    }
+    
     
 }

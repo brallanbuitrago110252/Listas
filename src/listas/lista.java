@@ -8,30 +8,85 @@ public class lista {
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         
-        int opc;
+        int opcionPrincipal,opcionmenus;
         
         Scanner sc = new Scanner(System.in);
         
+        ListaSimplementeLigada lista1 = new ListaSimplementeLigada();
+        ListaSimplementeLigadaCircular lista2 = new  ListaSimplementeLigadaCircular();
+        ListaDoblementeLigada lista3 = new ListaDoblementeLigada();
         do{
 
             System.out.println("Menu Litas");
-            System.out.println("Listas Simplemnte Ligadas");
-            System.out.println("Listas simplente Ligadas circular");
-            System.out.println("Lista doblemente ligada");
-            System.out.println("Lista doblemente ligadas circularmente");
+            System.out.println("1 Listas Simplemnte Ligadas");
+            System.out.println(" 2Listas simplente Ligadas circular");
+            System.out.println(" 3 Lista doblemente ligada");
+            System.out.println(" 4 Lista doblemente ligadas circularmente");
 
-            opc = sc.nextInt(); 
+            opcionPrincipal = sc.nextInt(); 
 
-            switch(opc)
+            switch(opcionPrincipal)
             {
                 case 1:
-                System.out.println("Listas Simplemnte Ligadas");
-                ListaSimplementeLigada lista1 = new ListaSimplementeLigada();
-                lista1.insertarInicio(5);
-                lista1.InsertarFinal(5);
-                lista1.MostrarDatos();
-                lista1.BorrarInicio(5);
-                lista1.BorrarMedio();
+                    do
+                    {
+                    System.out.println("Listas Simplemnte Ligadas");
+                    System.out.println("1 Insertar al inicio");
+                    System.out.println("2 Insertar al final");
+                    System.out.println("3 Insertar medio posicion");
+                    System.out.println("4 Borrar Inicio");
+                    System.out.println("5 Borra Final");
+                    System.out.println("6 Borrar medio por valor");
+                    System.out.println("7 mostrar lista");
+                    System.out.println("8 salir ");
+                    break;
+                    
+                case 2:
+                        
+                    opcionmenus = sc.nextInt();
+                    switch(opcionmenus){
+                        case 1:
+                            int dato;
+                            System.out.println("Ingrese el valor");
+                            dato = sc.nextInt();
+                            lista1.insertarInicio(dato);
+                            break;
+                            
+                        case 2:
+                            
+                            System.out.println("Ingrese el valor");
+                            dato = sc.nextInt();
+                            lista1.InsertarFinal(dato);
+                            break;   
+                        case 3:
+                            System.out.println("Ingrese el valor");
+                            dato = sc.nextInt();
+                            lista1.Insertarmedioposicion(dato);
+                        case 4:
+                           System.out.println("Ingrese el valor");
+                           dato = sc.nextInt(); 
+                           lista1.BorrarInicio(dato);
+                           
+                        case 5:
+                           System.out.println("Ingrese el valor");
+                           dato = sc.nextInt();
+                           lista1.BorrarFinal();
+                           
+                           
+                        case 7:
+                           System.out.println("Ingrese el valor");
+                           dato = sc.nextInt();
+                            lista1.MostrarDatos();
+                            
+                           
+                    }
+                    }while(opcionmenus != 8);
+               
+                
+                
+                
+                
+                
 
                 break;
 
@@ -50,7 +105,7 @@ public class lista {
                     break;
             }
             
-        }while(opc != 5);
+        }while(opcionPrincipal != 5);
     }
 }
         
