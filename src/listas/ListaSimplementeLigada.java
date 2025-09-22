@@ -32,14 +32,86 @@ public class ListaSimplementeLigada {
         }else{
             while(p.getEnlace()!=null){
                 p = p.getEnlace();
+                
             }
             p.setEnlace(x);
+        }        
+    }   
+    
+    void InsertarMedioPosicion(int dato, int pos)
+    {
+        Nodo x = new Nodo(dato);
+        Nodo p = punta;
+        if ((punta == null ) || (pos <= 1))
+        {
+            System.out.println("La lista esta vacia ");
+        }else{                        
+            int contador = 1;
+            p = p.getEnlace();
+            while(p.getEnlace()!=null && contador < pos -1)
+            {
+                p = p.getEnlace();
+                contador ++;                
+            }
+            x.setEnlace(p.getEnlace());
+            p.setEnlace(x);
+        } 
+    }
+   
+    
+
+    public void BorrarInicio() {
+        
+        Nodo p = punta;
+        if(punta != null){
+            p = p.getEnlace();
+            while(p.getEnlace()!=null)
+            {
+                p = p.getEnlace();
+            }
+            p.setEnlace(punta);
+        }else{
+            System.out.println("La lista está vacia ");
         }
         
     }
+    public void BorrarFinal(){
+        
+        Nodo p = punta;        
+        if(punta != null)
+        {
+              while(p.getEnlace().getEnlace()!= null){
+                p =  p.getEnlace();               
+              }
+              p.setEnlace(null);            
+        }else{
+            System.out.println(" la lista esta vacia ");                            
+            }
+                    
+        
+    }
     
-   
-    public void MostrarDatos()
+    public void BorrarMedioPorValor(int valor)
+    {
+     Nodo p = punta;     
+     if(punta != null)
+     {
+         p = p.getEnlace();
+         while(p.getEnlace()!=null)
+         {
+             if(p.getEnlace().getDato()== valor)
+             {
+                 System.out.println("Eliminando nodo");
+                 p.setEnlace(p.getEnlace().getEnlace());
+             }
+             p = p.getEnlace();
+         }         
+     }else{
+         System.out.println("La lista esta vacia ");
+     }        
+    }
+    
+    public void MostrarLista()
     {
         Nodo p = punta;
         if(punta==null)
@@ -52,42 +124,11 @@ public class ListaSimplementeLigada {
             {
                 System.out.println(p.getDato());
             p = p.getEnlace();
-            }
-            
+            }            
         }
     }
+           
+        
+}    
+           
 
-    public void BorrarInicio(int dato) {
-        
-        if(punta!=null){
-            punta =punta.getEnlace();
-         
-        }else{
-            System.out.println("La lista está vacia ");
-        }
-        
-    }
-    public void BorrarFinal(){
-        
-        
-        
-        
-        
-        }
-
-    void Insertarmedioposicion(int dato) {
-        
-    }
-        
-        
-            
-          
-        
-        
-        
-        
-        
-       
-    
-    
-}

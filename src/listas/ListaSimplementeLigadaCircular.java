@@ -3,8 +3,6 @@ package listas;
 
 
 public class ListaSimplementeLigadaCircular {
-    
-    
     private Nodo punta;
     
 

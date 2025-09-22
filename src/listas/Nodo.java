@@ -11,6 +11,8 @@ public class Nodo {
         enlace= null;
     }
 
+    
+
     public int getDato() {
         return dato;
     }

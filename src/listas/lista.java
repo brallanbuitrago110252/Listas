@@ -15,11 +15,12 @@ public class lista {
         ListaSimplementeLigada lista1 = new ListaSimplementeLigada();
         ListaSimplementeLigadaCircular lista2 = new  ListaSimplementeLigadaCircular();
         ListaDoblementeLigada lista3 = new ListaDoblementeLigada();
+        
         do{
 
             System.out.println("Menu Litas");
-            System.out.println("1 Listas Simplemnte Ligadas");
-            System.out.println(" 2Listas simplente Ligadas circular");
+            System.out.println(" 1 Listas Simplemnte Ligadas");
+            System.out.println(" 2 Listas simplente Ligadas circular");
             System.out.println(" 3 Lista doblemente ligada");
             System.out.println(" 4 Lista doblemente ligadas circularmente");
 
@@ -39,11 +40,9 @@ public class lista {
                     System.out.println("6 Borrar medio por valor");
                     System.out.println("7 mostrar lista");
                     System.out.println("8 salir ");
-                    break;
                     
-                case 2:
-                        
                     opcionmenus = sc.nextInt();
+                    
                     switch(opcionmenus){
                         case 1:
                             int dato;
@@ -52,41 +51,43 @@ public class lista {
                             lista1.insertarInicio(dato);
                             break;
                             
-                        case 2:
-                            
+                        case 2:                            
                             System.out.println("Ingrese el valor");
                             dato = sc.nextInt();
                             lista1.InsertarFinal(dato);
-                            break;   
+                            break;  
+                            
                         case 3:
                             System.out.println("Ingrese el valor");
                             dato = sc.nextInt();
-                            lista1.Insertarmedioposicion(dato);
-                        case 4:
-                           System.out.println("Ingrese el valor");
-                           dato = sc.nextInt(); 
-                           lista1.BorrarInicio(dato);
+                            System.out.println("Ingrese la posicion insertar");
+                            int pos = sc.nextInt();
+                            lista1.InsertarMedioPosicion(dato, pos);
+                            break;
+                        case 4:                           
+                           lista1.BorrarInicio();
+                           break;
                            
-                        case 5:
-                           System.out.println("Ingrese el valor");
-                           dato = sc.nextInt();
+                        case 5:                                                   
                            lista1.BorrarFinal();
+                           break;
                            
-                           
-                        case 7:
-                           System.out.println("Ingrese el valor");
-                           dato = sc.nextInt();
-                            lista1.MostrarDatos();
+                        case 6:                           
+                            System.out.println("Ingrese el valor que desea eliminar");
+                            int valor = sc.nextInt();
+                            lista1.BorrarMedioPorValor(valor);
+                            break;
                             
+                        case 7:
+                           
+                            lista1.MostrarLista();
+                            break;
+                            
+                        default:
+                            System.out.println(" Ingreso una opcion no valida ");                            
                            
                     }
                     }while(opcionmenus != 8);
-               
-                
-                
-                
-                
-                
 
                 break;
 
