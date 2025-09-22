@@ -38,7 +38,7 @@ public class ListaSimplementeLigada {
         }        
     }   
     
-    void InsertarMedioPosicion(int dato, int pos)
+    public void InsertarMedioPosicion(int dato, int pos)
     {
         Nodo x = new Nodo(dato);
         Nodo p = punta;
@@ -57,8 +57,7 @@ public class ListaSimplementeLigada {
             p.setEnlace(x);
         } 
     }
-   
-    
+        
 
     public void BorrarInicio() {
         
