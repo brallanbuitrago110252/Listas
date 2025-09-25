@@ -64,6 +64,7 @@ public class lista {
                             int pos = sc.nextInt();
                             lista1.InsertarMedioPosicion(dato, pos);
                             break;
+                            
                         case 4:                           
                            lista1.BorrarInicio();
                            break;
@@ -146,7 +147,7 @@ public class lista {
                             break;
                             
                         case 7:                           
-                            lista2.MostrarLista();
+                           // lista2.MostrarLista();
                             break;
                             
                         case 8:

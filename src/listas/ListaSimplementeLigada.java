@@ -47,7 +47,6 @@ public class ListaSimplementeLigada {
             System.out.println("La lista esta vacia ");
         }else{                        
             int contador = 1;
-            p = p.getEnlace();
             while(p.getEnlace()!=null && contador < pos -1)
             {
                 p = p.getEnlace();
@@ -92,18 +91,25 @@ public class ListaSimplementeLigada {
     
     public void BorrarMedioPorValor(int valor)
     {
-     Nodo p = punta;     
+     Nodo p = punta;
+     Nodo x = new Nodo (valor);
+     x = p;
      if(punta != null)
-     {
-         p = p.getEnlace();
+     {            
          while(p.getEnlace()!=null)
-         {
-             if(p.getEnlace().getDato()== valor)
+         { 
+             if(p.getDato()== valor)
              {
-                 System.out.println("Eliminando nodo");
-                 p.setEnlace(p.getEnlace().getEnlace());
+                 p = p.getEnlace();
+                 x.setEnlace(p);
+                 System.out.println("Eliminando nodo");                 
+             }else
+             {
+                 x = p;
+                 p = p.getEnlace();
+                                
              }
-             p = p.getEnlace();
+             p.setEnlace(x);
          }         
      }else{
          System.out.println("La lista esta vacia ");
