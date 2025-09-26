@@ -19,10 +19,14 @@ public class ListaSimplementeLigada {
     }
     public void insertarInicio( int dato){
         Nodo x = new Nodo (dato);
-        if (punta != null){
+        if (punta == null){
+            punta = x;
+        }else
+        {
             x.setEnlace(punta);
+            punta = x;
         }
-        punta = x;
+        
     }
     public void InsertarFinal(int dato){
         Nodo x = new Nodo(dato);
@@ -63,16 +67,12 @@ public class ListaSimplementeLigada {
         Nodo p = punta;
         if(punta != null){
             p = p.getEnlace();
-            while(p.getEnlace()!=null)
-            {
-                p = p.getEnlace();
-            }
-            p.setEnlace(punta);
+            punta = p;
         }else{
             System.out.println("La lista está vacia ");
-        }
-        
+        }        
     }
+    
     public void BorrarFinal(){
         
         Nodo p = punta;        
@@ -84,8 +84,7 @@ public class ListaSimplementeLigada {
               p.setEnlace(null);            
         }else{
             System.out.println(" la lista esta vacia ");                            
-            }
-                    
+            }                    
         
     }
     
@@ -96,24 +95,23 @@ public class ListaSimplementeLigada {
      x = p;
      if(punta != null)
      {            
-         while(p.getEnlace()!=null)
-         { 
-             if(p.getDato()== valor)
+             if(punta.getDato()== valor)
              {
-                 p = p.getEnlace();
-                 x.setEnlace(p);
-                 System.out.println("Eliminando nodo");                 
+                 punta = punta.getEnlace();
+                 
              }else
              {
                  x = p;
                  p = p.getEnlace();
-                                
-             }
-             p.setEnlace(x);
-         }         
+                 if(p.getDato()==valor)
+                 {
+                     x.setEnlace(p.getEnlace());
+                 }
+                 System.out.println("Nodo eliminado");
+             }                               
      }else{
          System.out.println("La lista esta vacia ");
-     }        
+      }        
     }
     
     public void MostrarLista()
@@ -131,9 +129,7 @@ public class ListaSimplementeLigada {
             p = p.getEnlace();
             }            
         }
-    }
-           
-        
+    }                   
 }    
            
 
